@@ -21,7 +21,7 @@ int main() {
 }
 */
 
-//ZADANIE 2 - pominiete
+//ZADANIE 2
 /* #include <iostream>
 using namespace std;
 int main() {
@@ -34,11 +34,13 @@ int main() {
 	if (a > b) {
 		cout << endl << "Liczba a jest wieksza od liczby b. " << endl;
 	}
-	else if (a < b) {
-		cout << endl << "Liczba b jest wieksza od liczby a. " << endl;
-	}
 	else {
-		cout << endl << "Liczby sa rowne. " << endl;
+		if (a < b) {
+			cout << endl << "Liczba b jest wieksza od liczby a. " << endl;
+		}
+		else {
+			cout << endl << "Liczby sa rowne. " << endl;
+		}
 	}
 }
 */
@@ -105,7 +107,7 @@ int main() {
 	else {
 		cout << endl << "Niepoprawne dzialanie. ";
 	}
-	cout << endl << "Suma: " << c;
+	cout << endl << "Wynik: " << c;
 }
 */
 
@@ -114,55 +116,82 @@ int main() {
 using namespace std;
 int main() {  
 	int i = 0;
-	while (1) {
-		cout << i;
+	bool a = true;
+	while (a) {
+		cout << i << endl;
+		i++;
 	}
 	return 0;
 }
 */
 
-//ZADANIE 6 - pominiete
+
+//ZADANIE 6
 /* #include <iostream>
 using namespace std;
 int main() {
 	float a, b, c;
+	int i = 0; // program pyta czy zakonczyc dzialanie pomimo blednego dzialania lub dzielenia przez 0
+	string x;
 	char dzialanie;
-	cout << "Podaj wartosc liczby zmiennoprzecinkowej a: ";
-	cin >> a;
-	cout << endl << "Podaj znak dzialania: ";
-	cin >> dzialanie;
-	cout << endl << "Podaj wartosc liczby zmiennoprzecinkowej b: ";
-	cin >> b;
 
-
-	if (dzialanie == '+') {
-		c = a + b;
-	}
-	else if (dzialanie == '-') {
-		c = a - b;
-	}
-	else if (dzialanie == '*') {
-		c = a * b;
-	}
-	else if (dzialanie == '/') {
-		if (b == 0) {
-			cout << endl << "Nie mozna dzielic przez 0!";
-			return 0;
+	while (1) {
+		if (i > 0) {
+			cout << endl << "Czy zakonczyc swoje dzialanie? ";
+			cin >> x;
+			if (x == "tak") {
+				return 0;
+			}
+			else if (x == "nie") {
+				i = 0;
+				continue;
+			}
+			else {
+				cout << "Podano zla odpowiedz. Przerywam petle. " << endl;
+				return 0;
+			}
 		}
-		c = a / b;
-	}
-	else {
-		cout << endl << "Niepoprawne dzialanie. ";
-	}
-	cout << endl << "Suma: " << c;
-}
-*/
+		i++;
 
-//ZADANIE 7 - nieskonczone
-#include <iostream>
+		cout << endl << "Podaj wartosc liczby zmiennoprzecinkowej a: ";
+		cin >> a;
+		cout << endl << "Podaj znak dzialania: ";
+		cin >> dzialanie;
+		cout << endl << "Podaj wartosc liczby zmiennoprzecinkowej b: ";
+		cin >> b;
+
+
+		if (dzialanie == '+') {
+			c = a + b;
+		}
+		else if (dzialanie == '-') {
+			c = a - b;
+		}
+		else if (dzialanie == '*') {
+			c = a * b;
+		}
+		else if (dzialanie == '/') {
+			if (b == 0) {
+				cout << endl << "Nie mozna dzielic przez 0!" << endl;
+				continue;
+			}
+			c = a / b;
+		}
+		else {
+			cout << endl << "Niepoprawne dzialanie. ";
+			continue;
+		}
+		cout << endl << "Wynik: " << c << endl;
+	}
+}
+*/ 
+
+
+//ZADANIE 7
+/* #include <iostream>
 using namespace std;
 int main() {
-	char x;
+	string x;
 	for (int i = 1; ; i++) {
 		if (i % 2 == 1) {
 			cout << endl << i;
@@ -170,30 +199,21 @@ int main() {
 		if (i == 200) {
 			cout << endl << "Czy przerwac dzialanie petli? ";
 			cin >> x;
-			if (x == 'tak') {
-				return 0;;
+			if (x == "tak") {
+				return 0;
 			}
-			else if (x == 'nie') {
+			else if (x == "nie") {
+				// i = 1;    -jesli petla ma sie resetowac po pytaniu
 				continue;
 			}
 			else {
 				cout << "Podano zla odpowiedz. Przerywam petle. " << endl;
 				return 0;
 			}
-			/*switch (x) {
-			case 'tak':
-				return 0;
-			case 'nie':
-				continue;
-			default: {
-				cout << "Podano zla odpowiedz. Przerywam petle. " << endl;
-				break;
-			}
-			}*/
 		}
 	}
 }
-
+*/
 
 //ZADANIE 8
 /* #include <iostream>
